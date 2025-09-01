@@ -39,6 +39,10 @@ jobs:
             # Set up Docker image name and tag
             - name: Set up image name
               id: image-name
+              env:
+                AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                AWS_REGION: eu-north-1  # Specify the AWS region          
               run: |
                 echo "IMAGE_NAME=mentee-robot" >> $GITHUB_ENV
                 if [[ "${{ github.ref_type }}" == "tag" ]]; then
