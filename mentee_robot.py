@@ -1,7 +1,7 @@
 from time import sleep
 
 while True:
-    print("System check complete. Mentee robot is operational...")
+    print("System check complete. Mentee robot is operational and ready to conquer...")
     sleep(5)
     print("Ugh, so tired. Entering standby mode. Wake me up later.")
     sleep(10)
