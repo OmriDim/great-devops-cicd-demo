@@ -57,7 +57,7 @@ CONTAINER_DEFINITIONS=$(aws ecs describe-task-definition \
 # Update the container image in the container definitions
 UPDATED_CONTAINER_DEFINITIONS=$(echo $CONTAINER_DEFINITIONS | jq \
   --arg IMAGE "$ECR_REPOSITORY:$NEW_TAG" \
-  '.[0].image = $IMAGE | [.]')
+  '.[0].image = $IMAGE | .')
 
 # Register a new task definition with the updated container image
 NEW_TASK_DEF=$(aws ecs register-task-definition \
