@@ -73,4 +73,4 @@ aws ecs update-service \
   --task-definition $NEW_TASK_DEF \
   --force-new-deployment
 
-echo "ECS task definition updated successfully with the new tag: $NEW_TAG"
+echo "ECS  task definition updated successfully with the new tag: $NEW_TAG"
