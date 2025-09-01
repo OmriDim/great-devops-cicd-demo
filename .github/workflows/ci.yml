@@ -48,7 +48,7 @@ jobs:
                 if [[ "${{ github.ref_type }}" == "tag" ]]; then
                   echo "IMAGE_TAG=${{ github.ref_name }}" >> $GITHUB_ENV
                 else
-                  echo "IMAGE_TAG=latest" >> $GITHUB_ENV
+                  echo "IMAGE_TAG=${{ github.sha }}" >> $GITHUB_ENV
                 fi
                 echo "ECR_REPOSITORY=$(aws sts get-caller-identity --query Account --output text).dkr.ecr.$AWS_REGION.amazonaws.com/mentee-robot" >> $GITHUB_ENV
 
